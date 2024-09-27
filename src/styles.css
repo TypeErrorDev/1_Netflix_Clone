@@ -16,7 +16,6 @@ body{
 .nav-links ul {
     display: flex;
     flex-direction: row;
-    padding-right: 4px;
     list-style: none;
     & li{
         padding: 10px
@@ -30,7 +29,6 @@ body{
 }
 
 /* Search styles */
-
 .nav-search{
     display: flex;
     justify-content: center;
@@ -59,10 +57,10 @@ body{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    justify-content: space-between;
+    justify-content: center;
     /* outline: 1px solid red; */
     max-width: auto;
-    margin: 150px;
+    margin: auto;
 }
 .movie-card{
     display: flex;
@@ -81,17 +79,20 @@ body{
         /* outline: 1px solid red; */
         
     }
-   
-    
 }
 .movie-info{
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     font-size:large;
     color: rgb(252, 239, 249);
     & img{
-        width: 32px;
+        width: 75px;
     }
+}
+.movie-details{
+    display: flex;
+    flex-direction: column;
+    
 }
