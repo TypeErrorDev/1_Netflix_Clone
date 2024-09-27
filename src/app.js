@@ -6,6 +6,8 @@ const searchButton = document.getElementById("searchButton");
 const movieImage = document.getElementById("movie-image");
 const movieTitle = document.getElementById("title");
 const movieGenre = document.getElementById("genre");
+const loadingMessage = document.getElementById("loading-message");
+const movieDescription = document.getElementById("description");
 
 // Generate a random IMDbID to load by default
 function generateRandomIMDbID() {
@@ -18,6 +20,10 @@ function generateRandomIMDbID() {
 async function loadRandomMovie() {
     let validMovieFound = false;
 
+    // Show loading message
+    loadingMessage.style.display = "block";
+
+    // Hide movie display elements initially
     movieImage.style.display = "none";
     movieTitle.style.display = "none";
     movieGenre.style.display = "none";
@@ -36,7 +42,7 @@ async function loadRandomMovie() {
             // Check if the movie is in English
             if (data.Language && data.Language.includes("English")) {
                 await displayMovieData(data);
-                validMovieFound = true; // Set flag to true if a valid English movie is found
+                validMovieFound = true; // Set flag to true if a valid movie is found
             } else {
                 console.log(
                     "Movie is not in English. Fetching a new random movie..."
@@ -46,6 +52,9 @@ async function loadRandomMovie() {
             console.error("Error loading random movie: ", error);
         }
     }
+
+    // Hide loading message after the movie is displayed
+    loadingMessage.style.display = "none";
 }
 
 // Main API Call
@@ -81,8 +90,9 @@ const displayMovieData = async (data) => {
 
     // If the poster is valid, update the DOM elements
     movieImage.src = data.Poster; // Set the movie poster URL
-    movieTitle.innerText = data.Title || "Title not available"; // Set the movie title
-    movieGenre.innerText = data.Genre || "Genre not available"; // Set the movie genre
+    movieTitle.innerText = `Title: ${data.Title}` || "Title not available"; // Set the movie title
+    movieGenre.innerText = `Genre: ${data.Genre}` || "Genre not available"; // Set the movie genre
+    movieDescription.innerText = `Description: ${data.Plot}`;
 
     // Show the movie display elements
     movieImage.style.display = "block";

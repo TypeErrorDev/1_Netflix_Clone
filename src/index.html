@@ -15,7 +15,8 @@
         <nav>
             <!-- netflix navbar -->
             <div class="nav-container">
-                <div class="nav-links">
+                <div class="logo">TreeFlix</div>
+                <!-- <div class="nav-links">
                     <ul>
                         <li>
                             <a href="#">TV Shows</a>
@@ -24,7 +25,7 @@
                             <a href="#">Movies</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="nav-search">
                     <input
                         id="search-input"
@@ -40,6 +41,8 @@
                 </div>
             </div>
         </nav>
+        <div id="loading-message" style="display: none;"><p>Loading movie...</p></div>
+
         <main class="movie-container">
             <!-- create a movie card with placeholder text that'll get populated from the api we'll use -->
             <div class="movie-card">
@@ -52,6 +55,7 @@
                     <div class="movie-details">
                         <p id="title">Mortal Kombat</p>
                         <p id="genre">Action, Adventure, Fantasy</p>
+                        <p id="description"></p>
                     </div>
                 </div>
             </div>
