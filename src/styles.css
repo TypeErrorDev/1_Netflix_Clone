@@ -18,20 +18,6 @@ body{
     color: rgb(50, 202, 50);
     text-shadow: 5px 1px 10px;
 }
-/* .nav-links ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    & li{
-        padding: 10px
-    }
-}
-.nav-links a{
-    list-style: none;
-    color: rgb(82, 209, 220);
-    font-size: 1.2em;
-    text-decoration: none;
-} */
 
 /* Search styles */
 .nav-search{
@@ -58,18 +44,18 @@ body{
 }
 /* Loading Message */
 #loading-message {
-    position: fixed; /* Position it relative to the viewport */
-    top: 50%; /* Move down to the middle */
-    left: 50%; /* Move right to the middle */
-    transform: translate(-50%, -50%); /* Offset the element back by half its width and height */
-    font-size: 1.5em; /* Adjust the font size as needed */
-    color: #333; /* Change text color if desired */
-    z-index: 1000; /* Ensure it appears above other content */
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    font-size: 1.5em; 
+    color: #333; 
+    z-index: 1000; 
 }
 #loading-message p {
-    font-size: 1.5em; /* Adjust font size */
-    color: rgb(82, 209, 220);; /* Change text color */
-    margin: 0; /* Remove default paragraph margin */
+    font-size: 1.5em; 
+    color: rgb(82, 209, 220);
+    margin: 0;
 }
 
 /* Tile Display Styles */
@@ -78,7 +64,6 @@ body{
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    /* outline: 1px solid red; */
     max-width: auto;
     margin: auto;
 }
@@ -89,7 +74,6 @@ body{
     justify-content: center;
     margin: 25px;
     padding: 15px;
-    /* border: 4px solid red; */
     background-color:rgb(80, 187, 197);;
     border-radius: 15px;
     & img{
@@ -97,8 +81,6 @@ body{
         align-self: center;
         margin-top: 25px;
         border-radius: 15px;
-        /* outline: 1px solid red; */
-        
     }
 }
 .movie-info{

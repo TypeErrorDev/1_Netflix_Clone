@@ -32,20 +32,20 @@ async function loadRandomMovie() {
         const randomIMDbID = generateRandomIMDbID();
         try {
             const res = await fetch(
-                `http://www.omdbapi.com/?apikey=${API_KEY}&i=${randomIMDbID}`
+                `https://www.omdbapi.com/?apikey=${API_KEY}&i=${randomIMDbID}`
             );
             if (!res.ok) {
                 throw new Error(`HTTP error! status: ${res.status}`);
             }
             const data = await res.json();
 
-            // Check if the movie is in English
-            if (data.Language && data.Language.includes("English")) {
+            // Check if the movie exists
+            if (data.Response === "True") {
                 await displayMovieData(data);
                 validMovieFound = true; // Set flag to true if a valid movie is found
             } else {
                 console.log(
-                    "Movie is not in English. Fetching a new random movie..."
+                    "Movie does not exist. Fetching a new random movie..."
                 );
             }
         } catch (error) {
@@ -56,6 +56,8 @@ async function loadRandomMovie() {
     // Hide loading message after the movie is displayed
     loadingMessage.style.display = "none";
 }
+
+
 
 // Main API Call
 async function fetchMovie(searchValue) {
