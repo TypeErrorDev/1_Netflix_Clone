@@ -13,20 +13,11 @@
     </head>
     <body>
         <nav>
-            <!-- netflix navbar -->
             <div class="nav-container">
                 <div class="logo">TreeFlix</div>
-                <!-- <div class="nav-links">
-                    <ul>
-                        <li>
-                            <a href="#">TV Shows</a>
-                        </li>
-                        <li>
-                            <a href="#">Movies</a>
-                        </li>
-                    </ul>
-                </div> -->
+                <!-- Logo -->
                 <div class="nav-search">
+                    <!-- Search Bar -->
                     <input
                         id="search-input"
                         type="text"
@@ -41,7 +32,9 @@
                 </div>
             </div>
         </nav>
-        <div id="loading-message" style="display: none;"><p>Loading movie...</p></div>
+        <div id="loading-message" style="display: none">
+            <p>Loading movie...</p>
+        </div>
 
         <main class="movie-container">
             <!-- create a movie card with placeholder text that'll get populated from the api we'll use -->
@@ -49,13 +42,15 @@
                 <img
                     id="movie-image"
                     src="https://m.media-amazon.com/images/M/MV5BY2ZlNWIxODMtN2YwZi00ZjNmLWIyN2UtZTFkYmZkNDQyNTAyXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg"
-                    alt="Movie Image"
+                    alt="Movie Image Not Found, Hit Refresh"
                 />
                 <div class="movie-info">
                     <div class="movie-details">
                         <p id="title">Mortal Kombat</p>
                         <p id="genre">Action, Adventure, Fantasy</p>
                         <p id="description"></p>
+                        <p id="cast"></p>
+                        <!-- New paragraph for the cast -->
                     </div>
                 </div>
             </div>
